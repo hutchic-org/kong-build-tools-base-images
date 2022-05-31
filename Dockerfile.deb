@@ -26,8 +26,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
         cmake \
         ninja-build \
         golang-1.13 \
-    &&  curl -sSL https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_$(dpkg --print-architecture) -o /usr/local/bin/yaml \
-    && chmod +x /usr/local/bin/yaml
+    &&  curl -sSL https://github.com/mikefarah/yq/releases/download/2.1.1/yq_linux_$(dpkg --print-architecture) -o /usr/local/bin/yaml \
+    &&  chmod +x /usr/local/bin/yaml \
+    &&  yaml --version
 
 ENV GOROOT=/usr/lib/go-1.13
 ENV PATH=$GOROOT/bin:$PATH
