@@ -1,4 +1,4 @@
-FROM rockylinux:8
+FROM rockylinux:9
 
 RUN yum -y install epel-release && \
     yum update -y && \
