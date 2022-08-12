@@ -30,4 +30,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
         libgcc-9-dev \
         libstdc++-9-dev \
     && curl -sSL https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64 -o /usr/local/bin/yaml \
-    && chmod +x /usr/local/bin/yaml
+    && chmod +x /usr/local/bin/yaml \
+    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y

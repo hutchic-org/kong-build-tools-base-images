@@ -25,4 +25,5 @@ RUN yum -y install epel-release && \
         rpm-sign \
     && ln -s /usr/bin/cmake3 /usr/bin/cmake \
     && curl -sSL https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64 -o /usr/local/bin/yaml \
-    && chmod +x /usr/local/bin/yaml
+    && chmod +x /usr/local/bin/yaml \
+    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y

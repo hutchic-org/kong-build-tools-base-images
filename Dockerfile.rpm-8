@@ -24,7 +24,8 @@ RUN yum -y install epel-release && \
         rpm-build \
         rpm-sign \
     && curl -sSL https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64 -o /usr/local/bin/yaml \
-    && chmod +x /usr/local/bin/yaml
+    && chmod +x /usr/local/bin/yaml \
+    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Not ideal, but luckily works; this is for running clang 7.0.1 built for ubuntu 18.04 on this distro
 # which ultimately is required by building BoringSSL. Remove this line if FIPS is provided by
