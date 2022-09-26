@@ -3,26 +3,28 @@ FROM rockylinux:9
 RUN yum -y install epel-release && \
     yum update -y && \
     yum -y install \
+        automake \
+        bzip2 \
         ca-certificates \
-        wget \
-        tar \
-        readline-devel \
-        pcre-devel \
-        openssl-devel \
+        cmake3 \
         curl \
-        unzip \
-        zlib-devel \
-        make \
         gcc \
         gcc-c++ \
-        bzip2 \
-        patch \
-        perl \
-        m4 \
         git \
-        cmake3 \
+        libtool \
+        m4 \
+        make \
+        openssl-devel \
+        patch \
+        pcre-devel \
+        perl \
+        readline-devel \
         rpm-build \
         rpm-sign \
+        tar \
+        unzip \
+        wget \
+        zlib-devel \
     && curl -sSL https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64 -o /usr/local/bin/yaml \
     && chmod +x /usr/local/bin/yaml \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
