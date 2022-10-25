@@ -31,3 +31,16 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     &&  chmod +x /usr/local/bin/yaml \
     &&  yaml --version \
     &&  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+RUN curl -fsSLo /tmp/yaml-0.2.5.tar.gz https://pyyaml.org/download/libyaml/yaml-0.2.5.tar.gz \
+    && cd /tmp \
+    && tar xzf yaml-0.2.5.tar.gz \
+    && ln -s /tmp/yaml-0.2.5 /tmp/yaml \
+    && cd /tmp/yaml \
+    && ./configure \
+      --libdir=/tmp/build/usr/local/kong/lib \
+      --includedir=/tmp/yaml-0.2.5 \
+    && make install \
+    && ./configure --libdir=/usr/local/kong/lib \
+    && make install \
+    && rm -rf /tmp/yaml-0.2.5
