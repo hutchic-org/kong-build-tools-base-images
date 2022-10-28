@@ -54,3 +54,7 @@ RUN curl -fsSLo /tmp/yaml-0.2.5.tar.gz https://pyyaml.org/download/libyaml/yaml-
     && ./configure --libdir=/usr/local/kong/lib \
     && make install \
     && rm -rf /tmp/yaml-0.2.5
+
+RUN bash --version && \
+    cmake --version && \
+    yaml --version
