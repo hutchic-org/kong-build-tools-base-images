@@ -36,6 +36,7 @@ RUN apk update \
         unzip \
         xz \
         zlib-dev \
+        luajit \
     && sed -i'' 's/^mozilla\/DST_Root_CA_X3.crt$/!mozilla\/DST_Root_CA_X3.crt/g' /etc/ca-certificates.conf \
     && update-ca-certificates \
     && curl -sSL https://github.com/mikefarah/yq/releases/download/1.15.0/yq_linux_amd64 -o /usr/local/bin/yaml \
