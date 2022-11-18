@@ -43,12 +43,6 @@ RUN curl -fsSLo /tmp/yaml-0.2.5.tar.gz https://pyyaml.org/download/libyaml/yaml-
     && make install \
     && rm -rf /tmp/yaml-0.2.5
 
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.24.1/cmake-3.24.1-linux-`uname -m`.sh && \
-    mkdir -p /tmp/cmake && \
-    chmod +x ./cmake-3*.sh && \
-    ./cmake-3* -- --skip-license --prefix=/tmp/cmake && \
-    mv /tmp/cmake/bin/* /usr/local/bin
-
 RUN bash --version && \
     cmake --version && \
     yaml --version
