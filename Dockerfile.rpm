@@ -41,5 +41,4 @@ RUN curl -fsSLo /tmp/yaml-0.2.5.tar.gz https://pyyaml.org/download/libyaml/yaml-
     && rm -rf /tmp/yaml-0.2.5
 
 RUN bash --version && \
-    cmake --version && \
-    yaml --version
+    cmake --version
