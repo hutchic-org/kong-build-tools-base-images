@@ -49,3 +49,11 @@ jobs:
         TAG: ${{steps.release.outputs.release-version}}
       with:
         push: 'true'
+
+  done:
+    needs: [release]
+    name: Done
+    if: needs.release.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo 'done'
