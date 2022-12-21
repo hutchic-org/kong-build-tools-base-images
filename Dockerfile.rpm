@@ -1,7 +1,6 @@
 FROM redhat/ubi8:8.7
 
-RUN yum -y install epel-release && \
-    yum update -y && \
+RUN yum update -y && \
     yum -y install \
         automake \
         bzip2 \
