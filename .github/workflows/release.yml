@@ -54,6 +54,7 @@ jobs:
   done:
     needs: [release]
     name: Done
+    if: needs.release.release.result != 'success'
     runs-on: ubuntu-latest
     steps:
-    - run: ${{needs.release.result}} == 'success'
+    - run: exit 1
