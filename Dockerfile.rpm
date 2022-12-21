@@ -1,7 +1,6 @@
-FROM centos:7
+FROM redhat/ubi8:8.7
 
-RUN yum -y install epel-release && \
-    yum update -y && \
+RUN yum update -y && \
     yum -y install \
         automake \
         bzip2 \
@@ -18,14 +17,11 @@ RUN yum -y install epel-release && \
         patch \
         pcre-devel \
         perl \
-        readline-devel \
         rpm-build \
-        rpm-sign \
         tar \
         unzip \
         wget \
-        zlib-devel \
-    && ln -s /usr/bin/cmake3 /usr/bin/cmake
+        zlib-devel
 
 RUN curl -fsSLo /tmp/yaml-0.2.5.tar.gz https://pyyaml.org/download/libyaml/yaml-0.2.5.tar.gz \
     && cd /tmp \
